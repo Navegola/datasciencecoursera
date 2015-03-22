@@ -1,0 +1,94 @@
+
+2: Workspace and Files
+
+getwd()       Directorio de trabajo
+ls()          Lista de objetos en directorio de trabajo
+list.files()  Lista de archivos/directorios
+dir()         Lista de archivos/directorios
+args()        Argumentos de una funcion
+dir.create()  Crea directorio
+setwd()       Fija directorio de trabajo
+file.create() Crea un archivo
+file.exists() Indica si un archivo existe
+file.info()   Informacion sobre archivo
+file.rename() Cambiar nombre archivo
+file.copy()   Copia archivos
+file.path()   Crea ruta relativa de un fichero o directorio independiente del SO
+unlink()      Borra directorio. Necesario recursive = TRUE para que borre todo el contenido
+
+
+3: Sequences of Numbers
+
+:             Operador para crear secuencias
+seq()         Crea secuencias con mas opciones (by=   lenght=  ,along.with =  )
+length()      Indica la longitud de un objeto44
+seq_along()   Crea secuencia a partir de un objeto
+rep()         Crea repeticiones  ( times=  , each=  )
+runif()       Crea  secuencia aleatoria uniforme
+gl()          Generate factors by specifying the pattern of their levels.
+
+4: Vectors
+
+The `<` and `>=` symbols in these examples are called 'logical operators'. Other logical operators include `>`, `<=`, `==` for exact equality, and `!=` for inequality.
+TRUE with A | B (logical 'or' a.k.a. 'union') or whether they are both TRUE with A & B (logical 'and' a.k.a. 'intersection'). Lastly, !A is the negation of A and is TRUE when A is FALSE and vice versa
+paste()       Junta los elementos de un vector o vectores (collapse=  ,sep=    )
+append()      Añade elementos a un vector
+scan()        Creación de vectores a partir de archivos de texto
+vector()      Creación de vectores (incluso vacios) a partir de secuencias y otros patrones
+
+5: Missing Values
+
+rnorm(1000)     Crea un vector de 1000 valores aleatorios distribuidos normalmente
+sample(x, n)    Muestra aleatoria de n elementos de un vector 
+is.na()         Vector lógico con valor TRUE si es un NA en un vector
+sum()           Sumando el vector lógico creado por is.na sabemos los NA que contiene su vector origen
+is.nan()        Vector lógico con valor TRUE si  es un NAN (0/0) en un vector
+complete.cases()Vector lógico con valor TRUE si no es un NA en varios vectores a la vez
+na.omit()       Devuelve el objeto con casos incompletos eliminados.
+
+6: Subsetting Vectors
+
+x[1:n]          Los primeros n elementos del vector x
+x[is.na(x)]     NAs de x
+x[!is.na(x)]    x sin NAs
+x[x>0]          Elementos positivos de x (incluidos NAs) Para quitarlos x[!is.na(x) & x>0]
+x[c(3,5,7)]     Selecciona elementos 3,5, y 7 de x
+x[-c(3,5,7)]    Todos menos elementos 3, 5 y 7
+v<-c(a=1,b=2)   Vector con elemtos nombrados
+names()         Nombres de los elementos de un vector
+names(x)<-c("a","b")  Asigna nombres a elementos de un vector x
+identical(x,y)  TRUE si x e y son iguales
+
+
+7: Matrices and Data Frames
+
+length()        Longitud de vector
+dim()           Dimension matriz o data frame
+attributes()    Dimension matriz o data frame
+matrix()        Crea matrices
+cbind()         Combina columnas de dos matrices o data frames
+rbind()         Combina filas de dos matrices o data frames
+data.frame()    Crea data frames a partir de vectores o matrices permite combinarlos.
+colnames()      Nombrar columnas matrices o data frames
+nrow() ncol()   return the number of rows or columns present in x
+subset()        Return subsets of vectors, matrices or data frames which meet conditions.
+
+
+OTROS
+
+invisible(x)    Retorna el objeto pero nolo imprime en pantalla
+load()          Reload datasets written with the function save.
+
+
+Debugging tools
+
+traceback()     Imprime pila de llamadas (call stack) a funciones. Utilizarla inmediatamente depues de
+                producirse el error
+debug()         Se pone una funcion como argumento y al llamarla se para y se podemos ejecutarla paso a paso.
+                Se desactiva con undebug(fun)
+browser()       Suspende ejecucion de función en cualquier punto del código para ejecutarla paso a paso. 
+                Pulsar "n" para avanzar. Se pueden anidar, saldrá un navegador por función.
+trace()         Inserta código de depuración en una parte del código, se intrrrumpe con untrace()
+recover()       Para la funcion al aparecer el error e imprime pila de llamadas en esse punto
+option(error=recover)  Opcion global para la sesión. Cuando se produce el error aparece pila de llamadas
+                y mediante un menú podemos navegar en la función que elijamos.
